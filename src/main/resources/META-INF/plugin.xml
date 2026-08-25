@@ -33,6 +33,7 @@
             enabledByDefault="true"
             level="WARNING"
             implementationClass="dev.gaphunter.changelogfragmentcompanion.inspection.ChangelogFragmentNamingInspection"/>
+        <notificationGroup id="Changelog Fragment Companion" displayType="BALLOON"/>
     </extensions>
 
     <actions>

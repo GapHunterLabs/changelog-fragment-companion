@@ -9,6 +9,7 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiFile
 import dev.gaphunter.changelogfragmentcompanion.model.FragmentFileNameResult
 import dev.gaphunter.changelogfragmentcompanion.parse.FragmentFileNameParser
+import dev.gaphunter.changelogfragmentcompanion.review.ReviewPrompt
 
 /**
  * Flags any file directly inside a `changelog.d/` directory whose name
@@ -40,6 +41,9 @@ class ChangelogFragmentNamingInspection : LocalInspectionTool() {
             ProblemHighlightType.GENERIC_ERROR_OR_WARNING,
             isOnTheFly,
         )
+
+        ReviewPrompt.recordHit(file.project, virtualFile.path)
+
         return arrayOf(problem)
     }
 
