@@ -47,7 +47,7 @@ class ChangelogFragmentNamingInspection : LocalInspectionTool() {
         return arrayOf(problem)
     }
 
-    /** Leaf-anchored, never a composite node (`SDK_GOTCHAS.md` §20). */
+    /** Leaf-anchored, never a composite node. */
     private fun leafOf(element: PsiElement): PsiElement {
         var current = element
         while (current.firstChild != null) current = current.firstChild
